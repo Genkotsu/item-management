@@ -28,15 +28,17 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($items as $item)
+                            @foreach ($Items as $Item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td>{{ $Item->id }}</td>
+                                    <td>{{ $Item->name }}</td>
+                                    <td>{{ $Item->type }}</td>
+                                    <td>{{ $Item->detail }}</td>
+                                    <td><a href='/item/edit/{{$Item->id}}'>編集</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

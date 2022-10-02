@@ -24,12 +24,12 @@ class ItemController extends Controller
     public function index()
     {
         // 商品一覧取得
-        $items = Item
+        $Items = Item
             ::where('items.status', 'active')
             ->select()
             ->get();
 
-        return view('item.index', compact('items'));
+        return view('item.index', compact('Items'));
     }
 
     /**
@@ -55,6 +55,34 @@ class ItemController extends Controller
             return redirect('/items');
         }
 
-        return view('item.add');
+        return view('item.index');
     }
+     // 商品編集
+    public function edit(Request $request)
+    {
+        $Items = Item::find($request->id);
+        return view('item.edit', [
+            'Items' => $Items,
+        ]);
+    } 
+    public function update(Request $request)
+    {
+        $rules= [
+            'name' => 'required|max:50',
+            'category' => 'required',
+            'detail' => 'nullable',
+          ];
+        
+        $request->validate($rules);
+
+        $Items = Item::find($request->id);
+        $Items->name = $request->name;
+        $Items->category = $request->category;
+        $Items->detail = $request->detail;
+        $Items->save();
+
+      return redirect('/Items');
+    }
+
 }
+
