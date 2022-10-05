@@ -38,7 +38,7 @@
                                     <td>{{ $Item->name }}</td>
                                     <td>{{ $Item->type }}</td>
                                     <td>{{ $Item->detail }}</td>
-                                    <td><a href='/item/edit/{{$Item->id}}'>編集</a></td>
+                                    <td><a href='/items/edit/{{$Item->id}}'>編集</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

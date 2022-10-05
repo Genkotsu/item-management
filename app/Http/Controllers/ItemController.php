@@ -37,6 +37,7 @@ class ItemController extends Controller
      */
     public function add(Request $request)
     {
+        
         // POSTリクエストのとき
         if ($request->isMethod('post')) {
             // バリデーション
@@ -55,9 +56,10 @@ class ItemController extends Controller
             return redirect('/items');
         }
 
-        return view('item.index');
+        return view('item.add');
     }
      // 商品編集
+     
     public function edit(Request $request)
     {
         $Items = Item::find($request->id);
@@ -66,22 +68,23 @@ class ItemController extends Controller
         ]);
     } 
     public function update(Request $request)
-    {
+        {
+    
         $rules= [
             'name' => 'required|max:50',
-            'category' => 'required',
-            'detail' => 'nullable',
+            'type' => 'required',
+            'detail' => 'required',
           ];
         
         $request->validate($rules);
 
         $Items = Item::find($request->id);
         $Items->name = $request->name;
-        $Items->category = $request->category;
+        $Items->type = $request->type;
         $Items->detail = $request->detail;
         $Items->save();
 
-      return redirect('/Items');
+      return redirect('/items');
     }
 
 }

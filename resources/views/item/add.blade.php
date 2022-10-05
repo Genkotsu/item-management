@@ -6,6 +6,8 @@
     <h1>商品登録</h1>
 @stop
 
+   
+      
 @section('content')
     <div class="row">
         <div class="col-md-10">

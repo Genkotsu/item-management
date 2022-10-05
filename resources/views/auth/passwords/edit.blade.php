@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-     <title>商品編集画面</title>
+     <title>会員編集画面</title>
     <meta name="description" content="商品編集画面です">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    
@@ -14,27 +14,25 @@
 </head>
     
  <body class="edit text-center">
-
+ @include('parts.nav')
      <div class=container>
-     <h2>商品編集画面</h2>    
+     <h2>会員編集画面</h2>    
     <main class="form-edit">
         <form method="post" action="/items/update">
         {{ csrf_field() }}
             <br>
-            <input type="text" class="form-control" name="name" value="{{$Items->name}}" placeholder="名前" >
+            <input type="text" class="form-control" name="name" value="{{$user->name}}" placeholder="名前" >
             <br>
             @if($errors->has('name')) <span>{{$errors->first('name')}}</span> @endif
             <br>
-            <input type="text" class="form-control" name="type" value="{{$Items->type}}" placeholder="種別" >
+            <input type="text" class="form-control" name="type" value="{{$Items->type}}" placeholder="メールアドレス" >
             <br>
             @if($errors->has('種別')) <span>{{$errors->first('type')}}</span> @endif
-            <br>
-            <input type="text" class="form-control" name="detail" value="{{$Items->detail}}" placeholder="詳細" >
             <br>
             @if($errors->has('詳細')) <span>{{$errors->first('detail')}}</span> @endif
              <br>
              <button type="submit" >編集</button>
-            <input type="hidden" name="id" value="{{$Items->id}}"> 
+            <input type="hidden" name="id" value="{{$Item->id}}"> 
             </form>
                        
             

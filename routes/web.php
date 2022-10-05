@@ -17,20 +17,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//Auth::routes();
+Auth::routes();
+
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
     
-
-
-Route::delete('/Items/{Item}', [App\Http\Controllers\ItemController::class, 'destroy']);
-Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
-Route::post('/Items/edit', [App\Http\Controllers\ItemController::class, 'update']);
-
+    Route::delete('/Items/{Item}', [App\Http\Controllers\ItemController::class, 'destroy']);
+    Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    Route::post('/update', [App\Http\Controllers\ItemController::class, 'update']);
 
 });
