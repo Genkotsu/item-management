@@ -17,7 +17,7 @@ class Item extends Model
         'type',
         'detail',
     ];
-
+    
     /**
      * The attributes that should be hidden for serialization.
      *

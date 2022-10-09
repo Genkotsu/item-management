@@ -230,7 +230,11 @@ return [
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
-
+        [
+            'text' => 'ユーザー覧',
+            'url'  => 'users',
+            'icon' => 'fas fa-gamepad',
+        ],
         // AdminLTEデフォルト
         /*
         // Navbar items:
