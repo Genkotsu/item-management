@@ -25,6 +25,10 @@ Route::prefix('users')->group(function () {
 Route::get('/', [App\Http\Controllers\UserController::class, 'index']);
 Route::get('/add', [App\Http\Controllers\UserController::class, 'add']);
 Route::post('/add', [App\Http\Controllers\UserController::class, 'add']);
+
+Route::delete('/', [App\Http\Controllers\UserController::class, 'destroy']);
+Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+Route::post('/update', [App\Http\Controllers\UserController::class, 'update']);
 });
 
 Route::prefix('items')->group(function () {

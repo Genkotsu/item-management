@@ -11,10 +11,10 @@
 
     <tr>
         <th>ID</th>
-        <th>名前x</th>
+        <th>名前</th>
         <th>メールアドレス</th>
         <th>権限</th>
-        <th>更新日時</th>
+        <th>&nbsp;</th>
         <th>&nbsp;</th>
     </tr>
     @foreach($users as $user)
