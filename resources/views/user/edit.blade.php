@@ -22,7 +22,7 @@
     
  <!-- <body class="edit text-center">
   <div class=container>
-     <h2>会員編集画面</h2>     -->
+     <h3>会員編集画面</h3>     -->
     <!-- <main class="form-edit"> -->
         <form method="post" action="/users/update">
         {{ csrf_field() }}
