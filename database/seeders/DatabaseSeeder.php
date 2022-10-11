@@ -13,6 +13,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-    }
+        Fruit::create([
+            'id' => '1',
+            'name' => '果物',
+            
+        ]);
+
+        Fruit::create([
+            'id' => '2',
+            'name' => '果物',
+        ]);
+
+        Fruit::create([
+            'name' => 'みかん',
+            'color' => '黄',
+            'price' => '110',
+        ]);
+    
 }

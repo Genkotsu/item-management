@@ -16,7 +16,15 @@ class Item extends Model
         'name',
         'type',
         'detail',
-    ];
+         ];
+
+    const TYPE=[
+        1 => "果物",
+        2 => "やさい",
+        3 => "肉類",
+        4 => "さかな",
+        5 => "飲料",
+    ];    
     
     /**
      * The attributes that should be hidden for serialization.

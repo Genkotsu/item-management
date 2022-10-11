@@ -28,8 +28,8 @@ class ItemController extends Controller
             ::where('items.status', 'active')
             ->select()
             ->get();
-
-        return view('item.index', compact('Items'));
+        $type=item::TYPE;
+        return view('item.index', compact('Items','type'));
     }
 
     /**
@@ -63,8 +63,10 @@ class ItemController extends Controller
     public function edit(Request $request)
     {
         $Items = Item::find($request->id);
+        $type=item::TYPE;
         return view('item.edit', [
             'Items' => $Items,
+            'type' => $type,
         ]);
     } 
     public function update(Request $request)

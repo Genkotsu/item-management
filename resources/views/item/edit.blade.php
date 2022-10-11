@@ -25,7 +25,7 @@
             <br>
             @if($errors->has('name')) <span>{{$errors->first('name')}}</span> @endif
             <br>
-            <input type="text" class="form-control" name="type" value="{{$Items->type}}" placeholder="種別" >
+            <input type="text" class="form-control" name="type" value="{{$type[$Items->type]}}" placeholder="種別" >
             <br>
             @if($errors->has('種別')) <span>{{$errors->first('type')}}</span> @endif
             <br>
