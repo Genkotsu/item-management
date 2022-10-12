@@ -7,23 +7,16 @@
 @stop
 
 @section('content')
-<!-- <!DOCTYPE html>
-<html lang="ja">
- 
-<head>
-    <meta charset="UTF-8"> -->
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-     <title>会員編集画面</title>
-    <meta name="description" content="会員編集画面です"> -->
-<!-- </style>
-</head> -->
-    
- <!-- <body class="edit text-center">
-  <div class=container>
-     <h3>会員編集画面</h3>     -->
-    <!-- <main class="form-edit"> -->
+@if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                       @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                       @endforeach
+                    </ul>
+                </div>
+            @endif        
+        <div class="card card-primary">
         <form method="post" action="/users/update">
         {{ csrf_field() }}
             <br>
@@ -32,8 +25,9 @@
             @if($errors->has('name')) <span>{{$errors->first('name')}}</span> @endif
             <br>
             <input type="text" class="form-control" name="email" value="{{$users->email}}" placeholder="email" >
+            <div class="card-footer">
             <br>
-             <button type="submit" >編集</button>
+            <button type="submit" class="btn btn-primary">登録</button>
             <input type="hidden" name="id" value="{{$users->id}}"> 
             </form>
                        

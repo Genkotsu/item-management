@@ -231,7 +231,7 @@ return [
             'icon' => 'fas fa-gamepad',
         ],
         [
-            'text' => 'ユーザー覧',
+            'text' => 'ユーザー一覧',
             'url'  => 'users',
             'icon' => 'fas fa-gamepad',
         ],

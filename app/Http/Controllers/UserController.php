@@ -25,12 +25,21 @@ class UserController extends Controller
     }
     public function update(Request $request)
     {
-          $message = [
+        // $rules=[
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        // ];
+
+        $message = [
             'name.required' => '名前入力が必要です',
-            'email.required' => 'メールアドレス入力が必要です',
+            'email.required' => 'メールアドレスが必要です',
             'email.email' => 'メールアドレス形式を確認してください',
           ];
-          
+
+        // $request->validate($rules, $message);
+        // if(empty($request->role)){
+        //     // $role=1;
+        // }  
         $user = User::find($request->id);
         $user->name=$request->name;
         $user->email=$request->email;
