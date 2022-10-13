@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
+                            <label for="type">種別 1:果物 2:やさい 3:肉類 4:さかな 5:飲料</label>
                             <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
                         </div>
 
