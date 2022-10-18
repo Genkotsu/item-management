@@ -44,7 +44,8 @@ class ItemController extends Controller
             $this->validate($request, [
                 'name' => 'required|max:100',
             ]);
-
+$variables = DB::select('SET @@auto_increment_increment=1'); 
+$variables2 = DB::select('SET @@auto_increment_offset=1');
             // 商品登録
             Item::create([
                 'user_id' => Auth::user()->id,
