@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -44,7 +45,9 @@ class ItemController extends Controller
             $this->validate($request, [
                 'name' => 'required|max:100',
             ]);
-
+            $variables = DB::select('SET @@auto_increment_increment=1'); 
+            $variables2 = DB::select('SET @@auto_increment_offset=1'); 
+                    
             // 商品登録
             Item::create([
                 'user_id' => Auth::user()->id,
