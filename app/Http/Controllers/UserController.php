@@ -9,9 +9,7 @@ class UserController extends Controller
     //
     public function index()
     {
-        $variables = DB::select('SET @@auto_increment_increment=1'); 
-        $variables2 = DB::select('SET @@auto_increment_offset=1');
-        // 会員一覧取得
+                // 会員一覧取得
         $users = User::all();
         return view('user.index', compact('users'));
     }
