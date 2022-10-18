@@ -38,7 +38,7 @@ class ItemController extends Controller
     public function add(Request $request)
     {
         
-        // POSTリクエストのとき
+        // POSTリクエストのとき１
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
