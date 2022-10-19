@@ -73,22 +73,30 @@ class ItemController extends Controller
         ]);
     } 
     public function update(Request $request)
-        {
-    
+    {
         $rules= [
             'name' => 'required|max:50',
             'type' => 'required',
             'detail' => 'required',
-          ];
+        ];
         
-        $request->validate($rules);
+        $msg=[  
+            'name.required' => '名前を入れてください',
+            'name.max' => '名前は50文字以内で記載してください',
+            'type.required' => '種別を入れてください',
+            'detail.required' => '詳細を入れてください',    
+        ]; 
+        $request->validate($rules,$msg);
+
 
         $Items = Item::find($request->id);
         $Items->name = $request->name;
         $Items->type = $request->type;
         $Items->detail = $request->detail;
         $Items->save();
-
+       
+        
+        
       return redirect('/items');
     }
 
